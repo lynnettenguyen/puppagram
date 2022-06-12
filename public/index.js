@@ -1,7 +1,7 @@
 const mainContent = () => {
     const h1Div = document.createElement("div")
     const h1Puppy = document.createElement("h1")
-    h1Puppy.innerText = "Puppyagram"
+    h1Puppy.innerText = "Puppagram"
     h1Puppy.id = "h1Puppy"
     h1Puppy.className = "h1Puppy"
 
