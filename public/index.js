@@ -65,6 +65,7 @@ const mainContent = () => {
     sendIcon.className = "fa-regular fa-paper-plane"
     const saveDiv = document.createElement("div");
     const saveIcon = document.createElement("i")
+    saveIcon.id = "notSaved"
     saveIcon.className = "fa-regular fa-bookmark"
     saveDiv.className = "save-div"
 
@@ -184,19 +185,21 @@ const submitLike = (likeButton) => {
             const updatedNum = updatedLikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
             likesCount.innerText = `${updatedNum} likes`
         }
-
     }
 }
 
-const submitSave = () => {
+const submitSave = (saveButton) => {
     const saveIcon = document.getElementsByClassName("fa-bookmark")[0];
-    saveIcon.classList.remove("fa-regular");
-    saveIcon.classList.add("fa-solid");
 
-    saveIcon.addEventListener("click", () => {
+    if (saveButton.target.id === "notSaved") {
+        saveIcon.classList.remove("fa-regular");
+        saveIcon.classList.add("fa-solid");
+        saveButton.target.id = "isSaved"
+    } else if (saveButton.target.id === "isSaved") {
         saveIcon.classList.remove("fa-solid");
         saveIcon.classList.add("fa-regular");
-    })
+        saveButton.target.id = "notSaved"
+    }
 }
 
 const createComment = (comment, i) => {
