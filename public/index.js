@@ -253,6 +253,7 @@ const submitComment = () => {
         localStorage.setItem("comment", JSON.stringify([commentText]))
     }
     commentInput.value = ""
+    return true;
 }
 
 const likeComment = (comment) => {
@@ -269,14 +270,21 @@ const deleteComment = (comment) => {
     comment.currentTarget.remove()
 }
 
+const dynamicPost = (potentialComment) => {
+    const postButton = document.querySelector(".post-button")
+
+    if (potentialComment.target.value.length >= 1) {
+        postButton.classList.add("darker-post-button")
+    } else if (!potentialComment.target.value.length) {
+        postButton.classList.remove("darker-post-button")
+    }
+}
+
 window.onload = () => {
     mainContent();
     document.querySelector("#puppyButton").addEventListener("click", newImg)
     document.querySelector(".fa-heart").addEventListener("click", submitLike)
     document.querySelector(".fa-bookmark").addEventListener("click", submitSave)
     document.querySelector(".post-button").addEventListener("click", submitComment)
-    document.querySelector(".comment-input").addEventListener("keyup", () => {
-        const postButton = document.querySelector(".post-button")
-        postButton.classList.add("darker-post-button")
-    })
+    document.querySelector(".comment-input").addEventListener("keyup", dynamicPost)
 }
