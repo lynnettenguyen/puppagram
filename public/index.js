@@ -90,10 +90,14 @@ const mainContent = () => {
     captionContent.innerText = "🐶🐶 Ruff day 🐾 but it was still paw-some 🐾"
     captionContent.className = "caption-content"
 
+    const listEmojis = document.createElement("div");
+    listEmojis.className = "list-of-emojis"
+
     const addCommentDiv = document.createElement("div");
     addCommentDiv.className = "add-comments-div"
     const emojiDiv = document.createElement("div");
     const emojiIcon = document.createElement("i")
+    emojiIcon.id = "hideEmojis"
     emojiDiv.className = "emoji-icon";
     emojiIcon.className = "fa-regular fa-face-smile"
 
@@ -115,7 +119,7 @@ const mainContent = () => {
     buttonDiv.append(puppyButton)
 
     mainDiv.append(leftDiv, postDiv, rightDiv)
-    postDiv.append(profileDiv, imgDiv, outerActionDiv, likesDiv, commentsDiv, addCommentDiv)
+    postDiv.append(profileDiv, imgDiv, outerActionDiv, likesDiv, commentsDiv, listEmojis, addCommentDiv)
 
     profileDiv.append(profileImgDiv, profileContent, postSettings)
     profileImgDiv.append(profileImg)
@@ -253,7 +257,9 @@ const submitComment = () => {
         localStorage.setItem("comment", JSON.stringify([commentText]))
     }
     commentInput.value = ""
-    return true;
+
+    const postButton = document.querySelector(".post-button")
+    postButton.classList.remove("darker-post-button")
 }
 
 const likeComment = (comment) => {
@@ -280,6 +286,24 @@ const dynamicPost = (potentialComment) => {
     }
 }
 
+const listEmojis = (emojiButton) => {
+    const emojiDiv = document.querySelector(".list-of-emojis");
+
+    if (emojiButton.target.id === "hideEmojis") {
+        const allEmojisDiv = document.createElement("div");
+        allEmojisDiv.id = "allEmojisDiv"
+        allEmojisDiv.innerText = "🐶 🐕 😂 🥺 🥳 💖 🤯 🐩 🦮 🍑 🤫 🐕‍🦺 🍇 🌈 🫀 🔆 ✅ 🍪"
+        allEmojisDiv.style.fontSize = "20px"
+        allEmojisDiv.style.marginBottom = "5px"
+        emojiDiv.append(allEmojisDiv)
+        emojiButton.target.id = "showEmojis"
+    } else if (emojiButton.target.id === "showEmojis") {
+        const allEmojisDiv = document.getElementById("allEmojisDiv")
+        allEmojisDiv.remove()
+        emojiButton.target.id = "hideEmojis"
+    }
+}
+
 window.onload = () => {
     mainContent();
     document.querySelector("#puppyButton").addEventListener("click", newImg)
@@ -287,4 +311,5 @@ window.onload = () => {
     document.querySelector(".fa-bookmark").addEventListener("click", submitSave)
     document.querySelector(".post-button").addEventListener("click", submitComment)
     document.querySelector(".comment-input").addEventListener("keyup", dynamicPost)
+    document.querySelector(".emoji-icon").addEventListener("click", listEmojis)
 }
