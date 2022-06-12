@@ -54,6 +54,7 @@ const mainContent = () => {
     actionDiv.className = "action-div"
     const loveAction = document.createElement("div");
     const loveIcon = document.createElement("i");
+    loveIcon.id = "unClicked"
     loveIcon.className = "fa-heart fa-regular"
 
     const commentAction = document.createElement("div");
@@ -161,28 +162,30 @@ const randomNum = () => {
     return randomNum
 }
 
-const submitLike = () => {
+const submitLike = (likeButton) => {
     const loveIcon = document.getElementsByClassName("fa-heart")[0]
-    loveIcon.classList.remove("fa-regular");
-    loveIcon.classList.add("fa-solid");
-
     const likesCount = document.querySelector(".likes-div")
+
     if (localStorage.getItem("likeCount")) {
         const currentLikes = localStorage.getItem("likeCount")
-        const updatedLikes = Number(currentLikes) + 1;
-        const updatedNum = updatedLikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        likesCount.innerText = `${updatedNum} likes`
-    }
 
-    loveIcon.addEventListener("click", () => {
-        const currentLikes = localStorage.getItem("likeCount")
-        const noLikes = Number(currentLikes);
-        // console.log (noLikes)
-        const noLikesNum = noLikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        likesCount.innerText = `${noLikesNum} likes`
-        loveIcon.classList.remove("fa-solid");
-        loveIcon.classList.add("fa-regular");
-    })
+        if (likeButton.target.id === "unClicked") {
+            loveIcon.classList.remove("fa-regular");
+            loveIcon.classList.add("fa-solid");
+            likeButton.target.id = "clicked"
+            const updatedLikes = Number(currentLikes) + 1;
+            const updatedNum = updatedLikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            likesCount.innerText = `${updatedNum} likes`
+        } else if (likeButton.target.id === "clicked") {
+            loveIcon.classList.remove("fa-solid");
+            loveIcon.classList.add("fa-regular");
+            likeButton.target.id = "unClicked"
+            const updatedLikes = Number(currentLikes);
+            const updatedNum = updatedLikes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            likesCount.innerText = `${updatedNum} likes`
+        }
+
+    }
 }
 
 const submitSave = () => {
