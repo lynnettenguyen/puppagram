@@ -292,7 +292,66 @@ const listEmojis = (emojiButton) => {
     if (emojiButton.target.id === "hideEmojis") {
         const allEmojisDiv = document.createElement("div");
         allEmojisDiv.id = "allEmojisDiv"
-        allEmojisDiv.innerText = "🐶 🐕 😂 🥺 🥳 💖 🤯 🐩 🦮 🍑 🤫 🐕‍🦺 🍇 🌈 🫀 🔆 ✅ 🍪"
+
+        const emoji1 = document.createElement("span");
+        const emoji2 = document.createElement("span");
+        const emoji3 = document.createElement("span");
+        const emoji4 = document.createElement("span");
+        const emoji5 = document.createElement("span");
+        const emoji6 = document.createElement("span");
+        const emoji7 = document.createElement("span");
+        const emoji8 = document.createElement("span");
+        const emoji9 = document.createElement("span");
+        const emoji12 = document.createElement("span");
+        const emoji13 = document.createElement("span");
+        const emoji14 = document.createElement("span");
+        const emoji15 = document.createElement("span");
+        const emoji16 = document.createElement("span");
+        const emoji17 = document.createElement("span");
+        const emoji18 = document.createElement("span");
+        const emoji19 = document.createElement("span");
+        const emoji20 = document.createElement("span");
+
+        emoji1.innerText = "🐶 "
+        emoji2.innerText = "🐕 "
+        emoji3.innerText = "😂 "
+        emoji4.innerText = "🥺 "
+        emoji5.innerText = "🥳 "
+        emoji6.innerText = "💖 "
+        emoji7.innerText = "🤯 "
+        emoji8.innerText = "🐩 "
+        emoji9.innerText = "🦮 "
+        emoji12.innerText = "🐕‍🦺 "
+        emoji13.innerText = "🍇 "
+        emoji14.innerText = "🌈 "
+        emoji15.innerText = "🫀 "
+        emoji16.innerText = "🔆 "
+        emoji17.innerText = "✅ "
+        emoji18.innerText = "🍪 "
+        emoji19.innerText = "🍑 "
+        emoji20.innerText = "🤫 "
+
+        emoji1.id = "emoji1"
+        emoji2.id = "emoji2"
+        emoji3.id = "emoji3"
+        emoji4.id = "emoji4"
+        emoji5.id = "emoji5"
+        emoji6.id = "emoji6"
+        emoji7.id = "emoji7"
+        emoji8.id = "emoji8"
+        emoji9.id = "emoji9"
+        emoji12.id = "emoji12"
+        emoji13.id = "emoji13"
+        emoji14.id = "emoji4"
+        emoji15.id = "emoji5"
+        emoji16.id = "emoji16"
+        emoji17.id = "emoji17"
+        emoji18.id = "emoji18"
+        emoji19.id = "emoji19"
+        emoji20.id = "emoji120"
+
+        allEmojisDiv.append(emoji1, emoji2, emoji3, emoji4, emoji5, emoji6, emoji7, emoji8, emoji9, emoji12, emoji13, emoji14, emoji15, emoji16, emoji17, emoji18, emoji19, emoji20)
+
         allEmojisDiv.style.fontSize = "20px"
         allEmojisDiv.style.marginBottom = "5px"
         emojiDiv.append(allEmojisDiv)
@@ -302,6 +361,10 @@ const listEmojis = (emojiButton) => {
         allEmojisDiv.remove()
         emojiButton.target.id = "hideEmojis"
     }
+}
+
+const selectEmoji = () => {
+    const allEmojisDiv = document.getElementById("allEmojisDiv")
 }
 
 window.onload = () => {
