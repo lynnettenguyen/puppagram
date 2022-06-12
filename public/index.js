@@ -219,6 +219,7 @@ const createComment = (comment, i) => {
 
     const deleteButton = document.createElement("div");
     deleteButton.className = "fa-regular fa-trash-can"
+    deleteButton.classList.add("comment-delete-button");
     deleteButton.style.display = "flex";
     deleteButton.style.justifyContent = "flex-start";
 

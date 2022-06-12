@@ -170,6 +170,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 6fr;
     margin-bottom: 5px;
+    align-items: center;
 }
 
 .user-caption {
@@ -190,7 +191,7 @@ img {
 
 .user-comment-div {
     display: grid;
-    grid-template-columns: 1fr 300px 1fr 1fr;
+    grid-template-columns: auto 62% auto auto;
     height: 28px;
 }
 
@@ -205,9 +206,19 @@ img {
     padding-left: 7px;
     font-size: 14px;
     display: flex;
+    grid-column-start: 2;
 }
 
 .comment-like-button {
     border: none;
     background: none;
+    grid-column-start: 3;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.comment-delete-button {
+    grid-column-start: 4;
+    display: flex;
+    justify-content: flex-end;
 }
