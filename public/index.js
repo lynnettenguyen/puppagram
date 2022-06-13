@@ -163,8 +163,8 @@ const newImg = async () => {
 }
 
 const randomNum = (min, max) => {
-    min = 1000000;
-    max = 9999999;
+    min = 100000;
+    max = 999999;
     const num = Math.floor(Math.random() * (max - min) + min)
     localStorage.setItem("likeCount", num)
     const randomNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -356,7 +356,7 @@ const listEmojis = (emojiButton) => {
 
         allEmojisDiv.append(emoji1, emoji2, emoji3, emoji4, emoji5, emoji6, emoji7, emoji8, emoji9, emoji12, emoji13, emoji14, emoji15, emoji16, emoji17, emoji18, emoji19, emoji20)
 
-        allEmojisDiv.style.fontSize = "20px"
+        allEmojisDiv.style.fontSize = "17px"
         allEmojisDiv.style.marginBottom = "5px"
         emojiDiv.append(allEmojisDiv)
         emojiButton.target.id = "showEmojis"

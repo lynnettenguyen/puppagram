@@ -115,7 +115,7 @@ img {
 .likes-div {
     display: flex;
     justify-content: flex-start;
-    margin: 0 390px 5px 0;
+    margin: 0 390px 5px 5px;
     font-weight: bold;
     padding: 5px;
     font-size: 14px;
@@ -171,13 +171,13 @@ img {
 .initial-caption {
     display: grid;
     grid-template-columns: 1fr 6fr;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     align-items: center;
 }
 
 .user-caption {
     font-weight: bold;
-    padding-left: 16px;
+    padding-left: 14px;
     font-size: 14px;
 }
 
@@ -193,13 +193,13 @@ img {
 
 .user-comment-div {
     display: grid;
-    grid-template-columns: auto 62% auto auto;
+    grid-template-columns: auto 63% 1fr auto;
     height: 28px;
 }
 
 .username-comment-span {
     font-weight: bold;
-    padding-left: 16px;
+    padding-left: 14px;
     font-size: 14px;
     display: flex;
 }
