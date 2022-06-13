@@ -77,7 +77,7 @@ const mainContent = () => {
 
     const likesDiv = document.createElement("div");
     likesDiv.className = "likes-div"
-    likesDiv.innerText = `${randomNum()} likes`
+    likesDiv.innerHTML = `<div class = "likes-span">${randomNum()} likes</div>`
 
     const commentsDiv = document.createElement("div");
     commentsDiv.className = "comments-div"
@@ -162,8 +162,10 @@ const newImg = async () => {
     }
 }
 
-const randomNum = () => {
-    const num = Math.floor(Math.random() * 1000000)
+const randomNum = (min, max) => {
+    min = 1000000;
+    max = 9999999;
+    const num = Math.floor(Math.random() * (max - min) + min)
     localStorage.setItem("likeCount", num)
     const randomNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     return randomNum

@@ -113,7 +113,9 @@ img {
 }
 
 .likes-div {
-    margin: 0 390px 5px 5px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 390px 5px 0;
     font-weight: bold;
     padding: 5px;
     font-size: 14px;
