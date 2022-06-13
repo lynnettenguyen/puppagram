@@ -11,18 +11,18 @@
 
 h1 {
     display: flex;
-    justify-content: center;
     font-family: 'Billabong';
-    margin-bottom: 10px;
     font-size: 40px;
     font-weight: 100;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .puppy-button {
     background: none;
     border: 1px solid rgba(0, 0, 0, 0.4);
-    padding: 4px;
     border-radius: 5px;
+    padding: 4px;
 }
 
 .puppy-button:active {
@@ -49,29 +49,29 @@ h1 {
 }
 
 .profile-name {
-    padding-top: 2px;
     font-weight: bolder;
+    padding-top: 2px;
 }
 
 .profile-location {
-    padding-top: 2px;
     font-size: 14px;
+    padding-top: 2px;
 }
 
 .post-settings {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     font-size: 16px;
+    justify-content: center;
 }
 
 .post-div {
     align-items: center;
     border: rgba(0, 0, 0, 0.544) solid 1px;
+    border-radius: 7px;
     display: flex;
     flex-direction: column;
     width: 500px;
-    border-radius: 7px;
 }
 
 .button {
@@ -81,13 +81,13 @@ h1 {
 }
 
 img {
-    max-width: 100%;
     max-height: 100%;
+    max-width: 100%;
 }
 
 #puppyImg {
-    width: auto;
     height: 400px;
+    width: auto;
 }
 
 .outer-action-div {
@@ -114,36 +114,36 @@ img {
 
 .likes-div {
     display: flex;
+    font-weight: bold;
+    font-size: 14px;
     justify-content: flex-start;
     margin: 0 390px 5px 5px;
-    font-weight: bold;
     padding: 5px;
-    font-size: 14px;
 }
 
 .add-comments-div {
+    border-top: rgba(128, 128, 128, 0.275) solid 0.5px;
     display: grid;
     grid-template-columns: 0.5fr 4fr 1fr;
-    border-top: rgba(128, 128, 128, 0.275) solid 0.5px;
 }
 
 .emoji-icon {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: flex-start;
 }
 
 .comment-input-div {
-    display: flex;
     align-items: center;
+    display: flex;
     grid-column-start: 2;
 }
 
 .comment-input {
-    width: 410px;
-    height: 30px;
     border: none;
+    height: 30px;
     outline: none;
+    width: 410px;
 }
 
 .comment-post-div {
@@ -154,8 +154,8 @@ img {
 
 .post-button {
     background: none;
-    color: rgba(43, 148, 234, 0.281);
     border: none;
+    color: rgba(43, 148, 234, 0.281);
     font-weight: bold;
     margin: 0 5px 0 5px;
 }
@@ -169,22 +169,21 @@ img {
 }
 
 .initial-caption {
+    align-items: center;
     display: grid;
     grid-template-columns: 1fr 6fr;
-    margin-bottom: 7px;
-    align-items: center;
 }
 
 .user-caption {
+    font-size: 14px;
     font-weight: bold;
     padding-left: 14px;
-    font-size: 14px;
 }
 
 .caption-content {
+    font-size: 14px;
     grid-column-start: 2;
     padding-left: 7px;
-    font-size: 14px;
 }
 
 .comments-div {
@@ -198,35 +197,38 @@ img {
 }
 
 .username-comment-span {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
     font-weight: bold;
     padding-left: 14px;
-    font-size: 14px;
-    display: flex;
 }
 
 .new-comment-div {
-    padding-left: 7px;
-    font-size: 14px;
+    align-items: center;
     display: flex;
+    font-size: 14px;
     grid-column-start: 2;
+    padding-left: 7px;
 }
 
 .comment-like-button {
-    border: none;
+    align-items: center;
     background: none;
-    grid-column-start: 3;
+    border: none;
     display: flex;
+    grid-column-start: 3;
     justify-content: flex-end;
 }
 
 .comment-delete-button {
-    grid-column-start: 4;
     display: flex;
+    grid-column-start: 4;
     justify-content: flex-end;
 }
 
 .time-stamp {
-    margin: 0 405px 8px 0;
-    font-size: 11px;
     color: rgba(128, 128, 128, 0.684);
+    font-size: 11px;
+    margin: 0 405px 8px 0;
 }
