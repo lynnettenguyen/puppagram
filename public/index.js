@@ -77,7 +77,7 @@ const mainContent = () => {
 
     const likesDiv = document.createElement("div");
     likesDiv.className = "likes-div"
-    likesDiv.innerHTML = `<div class = "likes-span">${randomNum()} likes</div>`
+    likesDiv.innerHTML = `<div class = "likes-span">${randomNum(100000, 999999)} likes</div>`
 
     const commentsDiv = document.createElement("div");
     commentsDiv.className = "comments-div"
@@ -89,6 +89,12 @@ const mainContent = () => {
     const captionContent = document.createElement("div")
     captionContent.innerText = "🐶🐶 Ruff day 🐾 but it was still paw-some 🐾"
     captionContent.className = "caption-content"
+
+    const timeStampDiv = document.createElement("div")
+    timeStampDiv.className = "time-stamp-div"
+    const timeStamp = document.createElement("div")
+    timeStamp.innerText = Math.floor(Math.random() * 24) + " HOURS AGO"
+    timeStamp.className = "time-stamp"
 
     const listEmojis = document.createElement("div");
     listEmojis.className = "list-of-emojis"
@@ -119,7 +125,7 @@ const mainContent = () => {
     buttonDiv.append(puppyButton)
 
     mainDiv.append(leftDiv, postDiv, rightDiv)
-    postDiv.append(profileDiv, imgDiv, outerActionDiv, likesDiv, commentsDiv, listEmojis, addCommentDiv)
+    postDiv.append(profileDiv, imgDiv, outerActionDiv, likesDiv, commentsDiv, timeStampDiv, listEmojis, addCommentDiv)
 
     profileDiv.append(profileImgDiv, profileContent, postSettings)
     profileImgDiv.append(profileImg)
@@ -138,6 +144,8 @@ const mainContent = () => {
 
     commentsDiv.append(initialCaption)
     initialCaption.append(userCaption, captionContent)
+
+    timeStampDiv.append(timeStamp)
 
     addCommentDiv.append(emojiDiv, commentInputDiv, commentPostDiv)
     emojiDiv.append(emojiIcon)
@@ -163,8 +171,6 @@ const newImg = async () => {
 }
 
 const randomNum = (min, max) => {
-    min = 100000;
-    max = 999999;
     const num = Math.floor(Math.random() * (max - min) + min)
     localStorage.setItem("likeCount", num)
     const randomNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -356,6 +362,7 @@ const listEmojis = (emojiButton) => {
 
         allEmojisDiv.append(emoji1, emoji2, emoji3, emoji4, emoji5, emoji6, emoji7, emoji8, emoji9, emoji12, emoji13, emoji14, emoji15, emoji16, emoji17, emoji18, emoji19, emoji20)
 
+        allEmojisDiv.style.padding = "1px"
         allEmojisDiv.style.fontSize = "17px"
         allEmojisDiv.style.marginBottom = "5px"
         emojiDiv.append(allEmojisDiv)
@@ -368,11 +375,11 @@ const listEmojis = (emojiButton) => {
 }
 
 const selectEmoji = (emoji) => {
-    const allEmojisDiv = document.getElementById("allEmojisDiv")
+    emoji.stopPropagation() // prevents all emojis from being selected at once
     const commentInput = document.querySelector(".comment-input")
     let currentCommentText = commentInput.value;
 
-    console.log(emoji.target.innerText)
+    // console.log(emoji.target.innerText)
     const selectedEmoji = emoji.target.innerText
 
     commentInput.value = currentCommentText + " " + selectedEmoji;

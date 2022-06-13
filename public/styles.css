@@ -188,7 +188,7 @@ img {
 }
 
 .comments-div {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .user-comment-div {
@@ -223,4 +223,10 @@ img {
     grid-column-start: 4;
     display: flex;
     justify-content: flex-end;
+}
+
+.time-stamp {
+    margin: 0 405px 8px 0;
+    font-size: 11px;
+    color: rgba(128, 128, 128, 0.684);
 }
