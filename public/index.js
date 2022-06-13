@@ -156,8 +156,10 @@ const newImg = async () => {
 
     localStorage.setItem("comment", JSON.stringify([]))
 
-    const commentSection = document.querySelector(".user-comment-div")
-    commentSection.remove()
+    const commentSection = document.querySelectorAll(".user-comment-div")
+    for (let i = 0; i < commentSection.length; i++) {
+        commentSection[i].remove()
+    }
 }
 
 const randomNum = () => {
