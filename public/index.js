@@ -367,8 +367,15 @@ const listEmojis = (emojiButton) => {
     }
 }
 
-const selectEmoji = () => {
+const selectEmoji = (emoji) => {
     const allEmojisDiv = document.getElementById("allEmojisDiv")
+    const commentInput = document.querySelector(".comment-input")
+    let currentCommentText = commentInput.value;
+
+    console.log(emoji.target.innerText)
+    const selectedEmoji = emoji.target.innerText
+
+    commentInput.value = currentCommentText + " " + selectedEmoji;
 }
 
 window.onload = () => {
@@ -379,4 +386,5 @@ window.onload = () => {
     document.querySelector(".post-button").addEventListener("click", submitComment)
     document.querySelector(".comment-input").addEventListener("keyup", dynamicPost)
     document.querySelector(".emoji-icon").addEventListener("click", listEmojis)
+    document.querySelector(".list-of-emojis").addEventListener("click", selectEmoji)
 }
