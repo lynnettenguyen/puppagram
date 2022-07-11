@@ -1,6 +1,6 @@
 # puppagram
 
-[Puppagram](https://puppagram.netlify.app) is a simplified instagram clone implementing DOM manipulation behaviors in response to API calls. Users can fetch a new dog image with 
+Puppagram is a simplified instagram clone implementing DOM manipulation behaviors in response to API calls. Users can fetch a new dog image with 
 the 'more puppies' button, like/unlike images (which will reflect in the number of likes), and post/like/delete comments. Users can also add 
 selected emojis to their comments.
 
